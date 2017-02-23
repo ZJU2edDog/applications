@@ -19,11 +19,18 @@
       "install_cmd": ""
     },
     { "name": "Hadoop Server",
-      "download_url": "http://apache.fayea.com/hadoop/common/hadoop-2.6.0/hadoop-2.6.0-src.tar.gz",
-      "local_filename" : "hadoop-2.6.0-src.tar.gz",
+      "download_url": "http://apache.fayea.com/hadoop/common/hadoop-2.7.3/hadoop-2.7.3-src.tar.gz",
+      "local_filename" : "hadoop-2.7.3-src.tar.gz",
       "pre_install_cmd": "",
       "build_cmd": "hadoop_build.sh",
       "install_cmd": "hadoop_install.sh"
+    },
+    { "name": "HBase Server",
+      "download_url": "http://apache.fayea.com/hbase/1.3.0/hbase-1.3.0-src.tar.gz",
+      "local_filename" : "hbase-1.3.0-src.tar.gz",
+      "pre_install_cmd": "",
+      "build_cmd": "hbase_build.sh",
+      "install_cmd": "hbase_install.sh"
     }],
 
   "client_setup": [ {
