@@ -38,7 +38,7 @@ source /etc/profile
 echo "Finish install preparation......"
 
 ######################################################################################
-# Install Hadoop
+# Install HBase
 ######################################################################################
 
 if [ -z "$(grep HBASE_INSTALL /etc/profile)" ] ; then
