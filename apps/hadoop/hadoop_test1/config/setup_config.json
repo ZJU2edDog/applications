@@ -31,6 +31,13 @@
       "pre_install_cmd": "",
       "build_cmd": "hbase_build.sh",
       "install_cmd": "hbase_install.sh"
+    },
+    { "name": "ZooKeeper Server",
+      "download_url": "http://apache.fayea.com/zookeeper/zookeeper-3.4.9/zookeeper-3.4.9.tar.gz",
+      "local_filename" : "zookeeper-3.4.9.tar.gz",
+      "pre_install_cmd": "",
+      "build_cmd": "",
+      "install_cmd": "zookeeper_install.sh"
     }],
 
   "client_setup": [ {
