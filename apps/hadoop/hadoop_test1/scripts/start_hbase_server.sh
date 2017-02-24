@@ -23,7 +23,7 @@ NUMA_CMD=""
 
 ##############################################################################
 #Start load mode hbase
-start_local_habse() {
+start_local_hbase() {
     #Update local configurations
     $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-hdfs-site.xml ${HBASE_INSTALL}/conf/hdfs-site.xml
     $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-core-site.xml ${HBASE_INSTALL}/conf/core-site.xml
