@@ -6,11 +6,10 @@
 #  To install ZooKeeper
 #
 #####################################################################################
-BUILD_DIR="./"$(tool_get_build_dir $1)
 VERSION="3.9.4"
 INSTALL_DIR="/u01/zookeeper"
-TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
-SERVER_FILENAME=${BUILD_DIR}/${TARGET_DIR}/build/zookeeper-${VERSION}.jar
+TARGET_DIR=$(tool_get_first_dirname ${INSTALL_DIR})
+SERVER_FILENAME=$1
 
 #######################################################################################
 if [ -z "${INSTALL_DIR}" ]; then
