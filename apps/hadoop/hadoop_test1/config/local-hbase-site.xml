@@ -1,8 +1,8 @@
 <property>
-     <name>hbase.rootdir</name>
-     <value>hdfs://localhost:50090/hbase</value>
- </property>
- <property>
-     <name>hbase.cluster.distributed</name>
-     <value>true</value>
+    <name>hbase.rootdir</name>
+    <value>hdfs://localhost:50090/hbase</value>
+</property>
+<property>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value>
 </property>
