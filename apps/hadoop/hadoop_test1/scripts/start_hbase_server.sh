@@ -25,14 +25,14 @@ NUMA_CMD=""
 #Start load mode hbase
 start_local_hbase() {
     #Update local configurations
-    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-hdfs-site.xml ${HBASE_INSTALL}/conf/hdfs-site.xml
-    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-core-site.xml ${HBASE_INSTALL}/conf/core-site.xml
-    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-yarn-site.xml ${HBASE_INSTALL}/conf/yarn-site.xml
-    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-mapred-site.xml ${HBASE_INSTALL}/conf/mapred-site.xml
-    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-hbase-site.xml ${HBASE_INSTALL}/conf/hbase-site.xml
+    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-hdfs-site.xml ${HBASE_INSTALL}${TARGET_DIR}conf/hdfs-site.xml
+    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-core-site.xml ${HBASE_INSTALL}${TARGET_DIR}conf/core-site.xml
+    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-yarn-site.xml ${HBASE_INSTALL}${TARGET_DIR}conf/yarn-site.xml
+    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-mapred-site.xml ${HBASE_INSTALL}${TARGET_DIR}conf/mapred-site.xml
+    $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-hbase-site.xml ${HBASE_INSTALL}${TARGET_DIR}conf/hbase-site.xml
     #Start HBase
-    sed -i "s/export.*JAVA_HOME.*=.*\${JAVA_HOME}//g" ${HBASE_INSTALL}/${TARGET_DIR}/conf/hbase-env.sh
-    echo "export JAVA_HOME=${JAVA_HOME}" >> ${HBASE_INSTALL}/${TARGET_DIR}/conf/hbase-env.sh
+    sed -i "s/export.*JAVA_HOME.*=.*\${JAVA_HOME}//g" ${HBASE_INSTALL}${TARGET_DIR}conf/hbase-env.sh
+    echo "export JAVA_HOME=${JAVA_HOME}" >> ${HBASE_INSTALL}${TARGET_DIR}conf/hbase-env.sh
     
     ${NUMA_CMD} ${HBASE_INSTALL}/${TARGET_DIR}/bin/start-hbase.sh
 }
