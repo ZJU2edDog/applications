@@ -7,4 +7,8 @@
     <name>hbase.cluster.distributed</name>
     <value>true</value>
   </property>
+  <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/u01/hbase/zk_data</value>
+  </property>
 </configuration>
