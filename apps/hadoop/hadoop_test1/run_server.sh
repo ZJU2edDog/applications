@@ -25,3 +25,4 @@ blockdev --setra 1024 /dev/nvme0n1
 
 #Include common setup utility functions
 ${APP_ROOT}/apps/hadoop/hadoop_test1/scripts/start_server.sh $@ 
+${APP_ROOT}/apps/hadoop/hadoop_test1/scripts/start_hbase_server.sh $@ 
