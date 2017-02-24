@@ -13,15 +13,9 @@ TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
 SERVER_FILENAME=${BUILD_DIR}/${TARGET_DIR}/build/zookeeper-${VERSION}.jar
 
 #######################################################################################
-if [ ! "$(tool_check_exists ${SERVER_FILENAME})"  == 0 ]; then
+if [ -z "${INSTALL_DIR}" ]; then
       echo "zookeeper-${VERSION} has not been built successfully"
       exit -1
-fi
-
-TARGET_DIR=$(tool_get_first_dirname ${INSTALL_DIR})
-if [ "$(tool_check_exists ${INSTALL_DIR}/${TARGET_DIR}/bin/zkServer.sh)"  == 0 ]; then
-      echo "ZooKeeper-${VERSION} has been installed successfully"
-      exit 0
 fi
 
 ####################################################################################
@@ -33,6 +27,11 @@ $(tool_add_sudo) mkdir -p ${INSTALL_DIR}
 $(tool_add_sudo) chown hbase.$(whoami) ${INSTALL_DIR}
 
 tar -zxvf ${SERVER_FILENAME} -C ${INSTALL_DIR}
-TARGET_DIR=$(tool_get_first_dirname ${INSTALL_DIR})
+
+if [ -z "$(grep HBASE_INSTALL /etc/profile)" ] ; then
+    echo "export ZOOKEEPER_INSTALL=${INSTALL_DIR}/${TARGET_DIR}" >> /etc/profile
+    echo 'export PATH=${ZOOKEEPER_INSTALL}/bin:${ZOOKEEPER_INSTALL}/sbin:${PATH}' >> /etc/profile
+    echo 'export PATH=$ZOOKEEPER_INSTALL/bin:$PATH' >> /etc/profile
+fi
 source /etc/profile
 echo "Finish install preparation......"
