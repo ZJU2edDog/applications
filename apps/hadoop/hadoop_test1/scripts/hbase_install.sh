@@ -10,7 +10,7 @@ BUILD_DIR="./"$(tool_get_build_dir $1)
 VERSION="1.3.0"
 INSTALL_DIR="/u01/hbase"
 TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
-SERVER_FILENAME=${BUILD_DIR}/${TARGET_DIR}/hbase-dist/target/hbase-${VERSION}.tar.gz
+SERVER_FILENAME=${BUILD_DIR}/${TARGET_DIR}/hbase-server/target/hbase-server-${VERSION}.jar
 
 #######################################################################################
 if [ ! "$(tool_check_exists ${SERVER_FILENAME})"  == 0 ]; then
@@ -19,7 +19,7 @@ if [ ! "$(tool_check_exists ${SERVER_FILENAME})"  == 0 ]; then
 fi
 
 TARGET_DIR=$(tool_get_first_dirname ${INSTALL_DIR})
-if [ "$(tool_check_exists ${INSTALL_DIR}/${TARGET_DIR}/bin/hadoop)"  == 0 ]; then
+if [ "$(tool_check_exists ${INSTALL_DIR}/${TARGET_DIR}/bin/hbase)"  == 0 ]; then
       echo "HBase-${VERSION} has been installed successfully"
       exit 0
 fi

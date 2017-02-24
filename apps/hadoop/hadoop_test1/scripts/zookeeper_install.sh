@@ -10,16 +10,16 @@ BUILD_DIR="./"$(tool_get_build_dir $1)
 VERSION="3.9.4"
 INSTALL_DIR="/u01/zookeeper"
 TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
-SERVER_FILENAME=${BUILD_DIR}/${TARGET_DIR}/zookeeper-dist/target/zookeeper-${VERSION}.tar.gz
+SERVER_FILENAME=${BUILD_DIR}/${TARGET_DIR}/build/zookeeper-${VERSION}.jar
 
 #######################################################################################
 if [ ! "$(tool_check_exists ${SERVER_FILENAME})"  == 0 ]; then
-      echo "HBase-${VERSION} has not been built successfully"
+      echo "zookeeper-${VERSION} has not been built successfully"
       exit -1
 fi
 
 TARGET_DIR=$(tool_get_first_dirname ${INSTALL_DIR})
-if [ "$(tool_check_exists ${INSTALL_DIR}/${TARGET_DIR}/bin/zookeeper)"  == 0 ]; then
+if [ "$(tool_check_exists ${INSTALL_DIR}/${TARGET_DIR}/bin/zkServer.sh)"  == 0 ]; then
       echo "ZooKeeper-${VERSION} has been installed successfully"
       exit 0
 fi

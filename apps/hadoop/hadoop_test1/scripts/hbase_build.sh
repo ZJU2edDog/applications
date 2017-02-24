@@ -12,7 +12,7 @@ VERSION="1.3.0"
 TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
 
 #######################################################################################
-if [ ! -z "${TARGET_DIR}" ] && [ "$(tool_check_exists ${BUILD_DIR}/${TARGET_DIR}/hbase-dist/target/hbase-${VERSION}.tar.gz)"  == 0 ]; then
+if [ ! -z "${TARGET_DIR}" ] && [ "$(tooL_check_exists ${BUILD_DIR}/${TARGET_DIR}/hbase-server/target/hbase-server-${VERSION}.jar)"  == 0 ]; then
       echo "HBase has been built successfully"
       exit 0
 fi
