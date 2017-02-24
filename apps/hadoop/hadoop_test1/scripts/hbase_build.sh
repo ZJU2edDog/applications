@@ -1,3 +1,4 @@
+#!/bin/bash
 
 . ${APP_ROOT}/toolset/setup/basic_cmd.sh
 
