@@ -32,9 +32,9 @@ start_local_hbase() {
     $(tool_add_sudo) cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/local-hbase-site.xml ${HBASE_INSTALL}/conf/hbase-site.xml
     #Start HBase
     sed -i "s/export.*JAVA_HOME.*=.*\${JAVA_HOME}//g" ${HBASE_INSTALL}/conf/hbase-env.sh
-    echo "export JAVA_HOME=${JAVA_HOME}" >> ${HBASE_INSTALL}/etc/conf/hbase-env.sh
+    echo "export JAVA_HOME=${JAVA_HOME}" >> ${HBASE_INSTALL}conf/hbase-env.sh
     
-    ${NUMA_CMD} ${HBASE_INSTALL}/bin/start-hbase.sh
+    ${NUMA_CMD} ${HBASE_INSTALL}bin/start-hbase.sh
 }
 
 start_local_hbase
