@@ -6,35 +6,23 @@
 #  To install Hadoop
 #
 #####################################################################################
-BUILD_DIR="./"$(tool_get_build_dir $1)
+BUILD_DIR="/u01/hbase"
 SERVER_FILENAME=$1
 VERSION="1.3.0"
 TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
 
-#######################################################################################
-if [ ! -z "${TARGET_DIR}" ] && [ "$(tooL_check_exists ${BUILD_DIR}/${TARGET_DIR}/hbase-server/target/hbase-server-${VERSION}.jar)"  == 0 ]; then
-      echo "HBase has been built successfully"
-      exit 0
-fi
-
 ####################################################################################
 # Prepare for build
 ####################################################################################
-rm -fr ${BUILD_DIR}
-mkdir -p ${BUILD_DIR}
-tar -zxvf ${SERVER_FILENAME} -C ${BUILD_DIR}
+if [ ! -z "${BUILD_DIR}" ]; then
+      tar -zxvf ${SERVER_FILENAME} -C ${BUILD_DIR}
+fi
 TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
 
 if [ -z "$(grep MAVEN_OPTS /etc/profile)" ] ; then 
     echo 'export MAVEN_OPTS="-Xms512m -Xmx2000m"' >> /etc/profile
 fi
 echo "Finish build preparation......"
-
-need_build=1
-if [ ${need_build} -eq 0 ] ; then 
-    echo "Not necessar to build Hadoop so far ....."
-    exit 0
-fi
 
 ######################################################################################
 # Build HBase
