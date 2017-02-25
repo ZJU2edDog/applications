@@ -17,6 +17,7 @@ if [ -z "${HBASE_INSTALL}" ] ; then
 fi
 
 TARGET_DIR=$(tool_get_first_dirname ${HBASE_INSTALL})
+echo ${TARGET_DIR}
 
 NUMA_CMD=""
 #NUMA_CMD="numactl --cpunodebind=0,1,2,3 --localalloc
