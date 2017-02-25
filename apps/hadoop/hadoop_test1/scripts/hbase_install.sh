@@ -15,10 +15,10 @@ TARGET_DIR=$(tool_get_first_dirname ${INSTALL_DIR})
 ####################################################################################
 # Prepare for install
 ####################################################################################
-$(tool_add_sudo) useradd hadoop
-$(tool_add_sudo) passwd hadoop hadooptest
+$(tool_add_sudo) useradd hbase
+$(tool_add_sudo) passwd habse hbasetest
 $(tool_add_sudo) mkdir -p ${INSTALL_DIR}
-$(tool_add_sudo) chown hadoop.$(whoami) ${INSTALL_DIR}
+$(tool_add_sudo) chown hbase.$(whoami) ${INSTALL_DIR}
 
 TARGET_DIR=$(tool_get_first_dirname ${INSTALL_DIR})
 source /etc/profile
