@@ -33,6 +33,7 @@ start_local_hadoop() {
     ${HADOOP_INSTALL}/bin/hdfs namenode -format
     ${NUMA_CMD} ${HADOOP_INSTALL}/sbin/start-dfs.sh
     ${NUMA_CMD} ${HADOOP_INSTALL}/sbin/start-yarn.sh
+    ${HADOOP_INSTALL}/bin/hadoop dfsadmin -safemode leave
 }
 
 start_local_hadoop
