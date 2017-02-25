@@ -15,6 +15,9 @@ TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
 ####################################################################################
 # Prepare for build
 ####################################################################################
+if [ ! -d "${BUILD_DIR}" ]; then
+      mkdir ${BUILD_DIR}
+fi
 if [ ! -z "${BUILD_DIR}" ]; then
       tar -zxvf ${SERVER_FILENAME} -C ${BUILD_DIR}
 fi
