@@ -21,7 +21,7 @@ fi
 #tar -zxvf HiBench.tar.gz -C /usr/local/
 #mv /usr/local/HiBench -T /usr/local/hibench
 
-HIBENCH_INSTALL_DIR="/u01/hibench"
+HIBENCH_INSTALL_DIR="/run/bigdata/hibench"
 
 $(tool_add_sudo) mkdir -p ${HIBENCH_INSTALL_DIR}
 $(tool_add_sudo) cp -fr ${BUILD_DIR}/${TARGET_DIR}/. ${HIBENCH_INSTALL_DIR}/
