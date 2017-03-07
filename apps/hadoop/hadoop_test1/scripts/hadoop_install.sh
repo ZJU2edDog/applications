@@ -8,7 +8,7 @@
 #####################################################################################
 BUILD_DIR="./"$(tool_get_build_dir $1)
 VERSION="2.7.3"
-INSTALL_DIR="/u01/hadoop"
+INSTALL_DIR="/run/hadoop"
 TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
 SERVER_FILENAME=${BUILD_DIR}/${TARGET_DIR}/hadoop-dist/target/hadoop-${VERSION}.tar.gz
 
