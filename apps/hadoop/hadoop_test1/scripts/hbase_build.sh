@@ -7,7 +7,7 @@
 #  To install Hadoop
 #
 #####################################################################################
-BUILD_DIR="/u01/hbase"
+BUILD_DIR="/run/hbase"
 SERVER_FILENAME=$1
 VERSION="1.3.0"
 TARGET_DIR=$(tool_get_first_dirname ${BUILD_DIR})
