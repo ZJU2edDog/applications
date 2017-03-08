@@ -23,18 +23,18 @@ else
         #echo "hibench.workload.datasize  \${hibench.${1}.datasize}" >> ${HIBENCH_CMD_DIR}/workloads/${1}/conf/10-${1}-userdefine.conf
     fi 
     #Update Hadoop Config
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/bayes_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/bayes/conf/10-baytes-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/join_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/join/conf/10-join-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/aggregation_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/aggregation/conf/10-aggregation-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/pagerank_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/pagerank/conf/10-pagerank-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/sleep_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/sleep/conf/10-sleep-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/scan_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/scan/conf/10-scan-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/dfsioe_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/dfsioe/conf/10-dfsioe-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/wordcount_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/wordcount/conf/10-wordcount-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/terasort_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/terasort/conf/10-terasort-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/sort_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/sort/conf/10-sort-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/kmeans_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/kmeans/conf/10-kmeans-userdefine.conf
-${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/nutchindexing_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/workloads/nutchindexing/conf/10-nuthindexing-userdefine.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/bayes_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/ml/bayes.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/join_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/sql/join.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/aggregation_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/sql/aggregation.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/pagerank_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/websearch/pagerank.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/sleep_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/micro/sleep.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/scan_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/sql/scan.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/dfsioe_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/micro/dfsioe.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/wordcount_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/micro/wordcount.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/terasort_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/micro/terasort.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/sort_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/micro/sort.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/kmeans_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/ml/kmeans.conf
+${tool_add_sudo} cp ${APP_ROOT}/apps/hadoop/hadoop_test1/config/nutchindexing_hibench_hadoop.conf ${HIBENCH_CMD_DIR}/conf/workloads/websearch/nuthindexing.conf
  
  
      case "${1}" in
