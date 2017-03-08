@@ -12,8 +12,8 @@ export APP_ROOT=${APP_ROOT}
 
 echo "Begin to start Hadoop Server ......"
 
-rm -fr /u01/hadoop/tmp/*
-rm -fr /u01/hadoop/hadoop-2.6.0/logs/*
+rm -fr /run/bigdata/hadoop/tmp/*
+rm -fr /run/bigdata/hadoop/hadoop-2.7.3/logs/*
 
 ulimit -n 32768
 #sysctl -p
