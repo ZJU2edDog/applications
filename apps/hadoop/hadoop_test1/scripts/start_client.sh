@@ -26,52 +26,52 @@ else
      case "${1}" in
         "pagerank")
             echo "Prepare Data ......"
-            ${HIBENCH_CMD_DIR}/workloads/websearch/pagerank/prepare/prepare.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/websearch/pagerank/prepare/prepare.sh
  
             echo "Begin to execute benchmark ......"
-            ${HIBENCH_CMD_DIR}/workloads/websearch/pagerank/hadoop/run.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/websearch/pagerank/hadoop/run.sh
         ;;
         "wordcount")
             echo "Prepare Data ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/wordcount/prepare/prepare.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/wordcount/prepare/prepare.sh
  
             echo "Begin to execute benchmark ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/wordcount/hadoop/run.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/wordcount/hadoop/run.sh
         ;;
         "dfsioe")
             echo "Prepare Data ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/dfsioe/prepare/prepare.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/dfsioe/prepare/prepare.sh
  
             echo "Begin to execute benchmark ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/dfsioe/hadoop/run.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/dfsioe/hadoop/run.sh
         ;;
         "terasort")
             echo "Prepare Data ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/terasort/prepare/prepare.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/terasort/prepare/prepare.sh
  
             echo "Begin to execute benchmark ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/terasort/hadoop/run.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/terasort/hadoop/run.sh
         ;;
         "sort")
             echo "Prepare Data ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/sort/prepare/prepare.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/sort/prepare/prepare.sh
  
             echo "Begin to execute benchmark ......"
-            ${HIBENCH_CMD_DIR}/workloads/micro/sort/hadoop/run.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/micro/sort/hadoop/run.sh
         ;;
         "scan")
             echo "Prepare Data ......"
-            ${HIBENCH_CMD_DIR}/workloads/sql/scan/prepare/prepare.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/sql/scan/prepare/prepare.sh
  
             echo "Begin to execute benchmark ......"
-            ${HIBENCH_CMD_DIR}/workloads/sql/scan/hadoop//run.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/sql/scan/hadoop//run.sh
         ;;
         "kmeans")
             echo "Prepare Data ......"
-            ${HIBENCH_CMD_DIR}/workloads/ml/kmeans/prepare/prepare.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/ml/kmeans/prepare/prepare.sh
  
             echo "Begin to execute benchmark ......"
-            ${HIBENCH_CMD_DIR}/workloads/ml/kmeans/hadoop/run.sh
+            ${HIBENCH_CMD_DIR}/bin/workloads/ml/kmeans/hadoop/run.sh
         ;;
     esac
 fi
