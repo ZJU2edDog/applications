@@ -27,46 +27,47 @@ delete_tmp_dirs() {
 }
 
 #Enable numa_balancing
-max_iter_num=3
-iter_index=0
-while [[ ${iter_index} -lt ${max_iter_num} ]]
-do
+#max_iter_num=3
+#iter_index=0
+#while [[ ${iter_index} -lt ${max_iter_num} ]]
+#do
     #caseslist=( "pagerank" "wordcount" "dfsioe"  "terasort" "sort"  "scan" "kmeans")
     #numa_balancing=( "1"      "1"         "0"         "0"   "0"     "0"    "0")
 
-    caseslist=("kmeans" "wordcount" "pagerank") 
+   # caseslist=("kmeans" "wordcount" "pagerank") 
     #caseslist=("kmeans")
  
-    case_index=0
-    for casename in ${caseslist[@]} 
-    do
-        echo 1 > /proc/sys/kernel/numa_balancing
-        echo 60000 > /proc/sys/kernel/numa_balancing_scan_period_max_ms
-        echo "${casename} has numa_balancing :$(cat /proc/sys/kernel/numa_balancing)"
+    #case_index=0
+    #for casename in ${caseslist[@]} 
+    #do
+     #   echo 1 > /proc/sys/kernel/numa_balancing
+      #  echo 60000 > /proc/sys/kernel/numa_balancing_scan_period_max_ms
+       # echo "${casename} has numa_balancing :$(cat /proc/sys/kernel/numa_balancing)"
 
-        delete_tmp_dirs
-        ./scripts/start_client.sh ${casename} large    
+        #delete_tmp_dirs
+        #./scripts/start_client.sh ${casename} large    
         
-        delete_tmp_dirs
-        ./scripts/start_client.sh ${casename} huge 
-        let "case_index++"
-    done
+        #delete_tmp_dirs
+        #./scripts/start_client.sh ${casename} huge 
+        #let "case_index++"
+    #done
 
-    let "iter_index++"
-done
+    #let "iter_index++"
+#done
 
 #Disable numa_balancing
-max_iter_num=3
-iter_index=0
-while [[ ${iter_index} -lt ${max_iter_num} ]]
-do
-    caseslist=("dfsioe"  "terasort" "sort"  "scan")
+#max_iter_num=3
+#iter_index=0
+#while [[ ${iter_index} -lt ${max_iter_num} ]]
+#do
+   # caseslist=("dfsioe"  "terasort" "sort"  "scan")
 
     #caseslist=("kmeans" "scan" "sort" "terasort" "wordcount" "dfsioe") 
  
-    case_index=0
-    for casename in ${caseslist[@]} 
-    do
+    #case_index=0
+   # for casename in ${caseslist[@]} 
+     casename="terasort"
+    #do
         echo 0 > /proc/sys/kernel/numa_balancing
         echo 1000 > /proc/sys/kernel/numa_balancing_scan_period_max_ms
         echo "${casename} has numa_balancing :$(cat /proc/sys/kernel/numa_balancing)"
@@ -76,11 +77,11 @@ do
         
         delete_tmp_dirs
         ./scripts/start_client.sh ${casename} huge 
-        let "case_index++"
-    done
+       # let "case_index++"
+    #done
 
-    let "iter_index++"
-done
+    #let "iter_index++"
+#done
 
 #Restore to default values
 echo 60000 > /proc/sys/kernel/numa_balancing_scan_period_max_ms
